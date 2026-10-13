@@ -1,5 +1,95 @@
-[build.processing]
-  skip_processing = false
+# Configuração da Netlify – Solucionne
+# Site estático sem build: só a pasta public/ é publicada.
+# Tudo fora dela (apps-script/, originais/, ferramentas/, docs/, .env) nunca vai para o ar.
+# As páginas são geradas por ferramentas/gerar_paginas.py (rodar no computador antes do commit).
 
-[build.processing.html]
-  pretty_urls = true
+[build]
+  publish = "public"
+  command = ""
+
+# Função que recebe os formulários (/api/orcamento): grava na planilha e envia à API de Conversões da Meta.
+# Variáveis de ambiente: APPS_SCRIPT_URL, FORM_SECRET (obrigatórias) e META_* (opcionais). Ver docs/rastreamento.md.
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# ---------- Redirecionamentos ----------
+
+# Endereços curtos
+[[redirects]]
+  from = "/links"
+  to = "/links.html"
+  status = 200
+
+[[redirects]]
+  from = "/bio"
+  to = "/links"
+  status = 301
+
+# Endereço antigo da página de links (está na bio do Instagram)
+[[redirects]]
+  from = "/link-bio"
+  to = "/links"
+  status = 301
+
+[[redirects]]
+  from = "/link-bio.html"
+  to = "/links"
+  status = 301
+
+[[redirects]]
+  from = "/politica-de-privacidade"
+  to = "/politica-de-privacidade.html"
+  status = 200
+
+[[redirects]]
+  from = "/privacidade"
+  to = "/politica-de-privacidade"
+  status = 301
+
+[[redirects]]
+  from = "/obrigado"
+  to = "/obrigado.html"
+  status = 200
+
+# ---------- Cabeçalhos ----------
+
+# Segurança básica em todas as páginas
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    # CSP: de onde o navegador pode carregar scripts, estilos, fontes e iframes.
+    # Sem 'unsafe-inline' em script-src: o site não tem script embutido (tudo em /assets/js/).
+    # form-action inclui facebook.com: o Pixel da Meta envia eventos por um formulário invisível.
+    # Ferramenta nova de rastreamento (ex.: TikTok, Hotjar): adicione o domínio dela em script-src.
+    Content-Security-Policy = """default-src 'self'; \
+      script-src 'self' https://www.googletagmanager.com https://*.google.com https://*.gstatic.com https://*.googleadservices.com https://*.doubleclick.net https://*.google-analytics.com https://connect.facebook.net; \
+      style-src 'self' 'unsafe-inline'; \
+      font-src 'self'; \
+      img-src 'self' data: https:; \
+      connect-src 'self' https:; \
+      frame-src https://www.google.com https://*.doubleclick.net https://www.facebook.com; \
+      object-src 'none'; base-uri 'self'; form-action 'self' https://www.facebook.com; frame-ancestors 'self'; upgrade-insecure-requests"""
+
+# Cache longo (1 ano) em fontes e imagens. ATENÇÃO: ao trocar uma imagem, use um nome de arquivo novo
+# (ex.: hero-2.webp) ou o navegador de quem já visitou continua mostrando a antiga.
+# CSS e JS ficam sem cache longo (padrão da Netlify) para cada deploy valer na hora.
+[[headers]]
+  for = "/assets/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/assets/favicon/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"

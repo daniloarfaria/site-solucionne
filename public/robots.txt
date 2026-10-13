@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://solucionne.com.br/sitemap.xml

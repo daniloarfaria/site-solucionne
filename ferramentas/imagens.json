@@ -1,0 +1,205 @@
+{
+ "award-photo": {
+  "larguras": [
+   640,
+   1100
+  ],
+  "proporcao": 1.0
+ },
+ "difusores-acusticos": {
+  "larguras": [
+   400,
+   653
+  ],
+  "proporcao": 1.1072
+ },
+ "espumas-acusticas": {
+  "larguras": [
+   400,
+   653
+  ],
+  "proporcao": 1.1072
+ },
+ "forro-acustico-com-amortecedor": {
+  "larguras": [
+   400,
+   653
+  ],
+  "proporcao": 1.1072
+ },
+ "forro-acustico2": {
+  "larguras": [
+   640,
+   1200
+  ],
+  "proporcao": 0.75
+ },
+ "imagem-destaque1": {
+  "larguras": [
+   800,
+   1600
+  ],
+  "proporcao": 0.75
+ },
+ "imagem-destaque2": {
+  "larguras": [
+   560,
+   1000
+  ],
+  "proporcao": 1.3333
+ },
+ "imagem-destaque3": {
+  "larguras": [
+   560,
+   1000
+  ],
+  "proporcao": 1.3333
+ },
+ "janela-abertura-de-correr": {
+  "larguras": [
+   560,
+   1000
+  ],
+  "proporcao": 1.3333
+ },
+ "janela-abertura-de-giro": {
+  "larguras": [
+   560,
+   1000
+  ],
+  "proporcao": 1.3333
+ },
+ "janela-instalacao-embutida": {
+  "larguras": [
+   560,
+   1000
+  ],
+  "proporcao": 1.3333
+ },
+ "janela-instalacao-sobreposta": {
+  "larguras": [
+   560,
+   1000
+  ],
+  "proporcao": 0.75
+ },
+ "janela-linha-advanced": {
+  "larguras": [
+   400,
+   595
+  ],
+  "proporcao": 1.4151
+ },
+ "janela-linha-basic": {
+  "larguras": [
+   400,
+   595
+  ],
+  "proporcao": 1.4151
+ },
+ "janela-linha-confort": {
+  "larguras": [
+   400,
+   595
+  ],
+  "proporcao": 1.4151
+ },
+ "janelas-acusticas": {
+  "larguras": [
+   400,
+   653
+  ],
+  "proporcao": 1.1072
+ },
+ "jateamento-termo-acustico": {
+  "larguras": [
+   400,
+   653
+  ],
+  "proporcao": 1.1072
+ },
+ "jateamento-termo-acustico2": {
+  "larguras": [
+   640,
+   1200
+  ],
+  "proporcao": 1.3333
+ },
+ "paineis-de-absorcao-sonora": {
+  "larguras": [
+   400,
+   653
+  ],
+  "proporcao": 1.1072
+ },
+ "painel-acustico2": {
+  "larguras": [
+   640,
+   1200
+  ],
+  "proporcao": 0.75
+ },
+ "parede-acustica-com-amortecedor": {
+  "larguras": [
+   400,
+   652
+  ],
+  "proporcao": 1.1089
+ },
+ "parede-acustica2": {
+  "larguras": [
+   640,
+   1200
+  ],
+  "proporcao": 1.3333
+ },
+ "piso-acustico2": {
+  "larguras": [
+   640,
+   850
+  ],
+  "proporcao": 0.9141
+ },
+ "pisos-silenciadores": {
+  "larguras": [
+   400,
+   653
+  ],
+  "proporcao": 1.1072
+ },
+ "porta-acustica2": {
+  "larguras": [
+   640,
+   1200
+  ],
+  "proporcao": 0.75
+ },
+ "portas-acusticas": {
+  "larguras": [
+   400,
+   653
+  ],
+  "proporcao": 1.1072
+ },
+ "projeto": {
+  "larguras": [
+   560,
+   1000
+  ],
+  "proporcao": 0.6667
+ },
+ "visores-acustico2": {
+  "larguras": [
+   640,
+   1200
+  ],
+  "proporcao": 0.75
+ },
+ "visores-acusticos": {
+  "larguras": [
+   400,
+   653
+  ],
+  "proporcao": 1.1072
+ }
+}
