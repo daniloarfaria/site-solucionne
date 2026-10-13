@@ -68,7 +68,7 @@ PRODUTOS = [
     {
         'slug': 'difusores-acusticos', 'nome': 'Difusores Acústicos', 'card': 'difusores-acusticos',
         'titulo': 'Difusores Acústicos para Estúdios e Home Cinema | Solucionne',
-        'descricao': 'Difusores acústicos em madeira, EPS e acrílico para estúdios, home cinemas e auditórios. Som natural, sem ecos. Projeto e instalação em BH.',
+        'descricao': 'Difusores acústicos em madeira, EPS e acrílico para estúdios, home cinemas e auditórios. Som natural, sem ecos. Projeto e instalação.',
         'h1': 'Som com qualidade de estúdio: descubra os <em>Difusores Acústicos</em>',
         'lead': 'Controle as reflexões sonoras e garanta um som natural e cristalino em seu ambiente, sem perder a vivacidade acústica.',
         'checks': ['Cria um campo sonoro homogêneo e natural.', 'Evita ecos flutuantes e distorções.', 'Peças com design sofisticado que valorizam o ambiente.'],
@@ -111,7 +111,7 @@ PRODUTOS = [
     },
     {
         'slug': 'janela-acustica', 'nome': 'Janela Acústica', 'card': 'janelas-acusticas',
-        'titulo': 'Janela Acústica em BH: até 30 dB de isolamento | Solucionne',
+        'titulo': 'Janela Acústica: até 30 dB de isolamento | Solucionne',
         'descricao': 'Janelas acústicas em alumínio com vidro laminado: linhas Basic, Confort e Advanced, isolamento de até 30 dB. Instalação sobreposta ou embutida.',
         'h1': 'O fim do barulho: conforto e silêncio com as <em>Janelas Acústicas</em> Solucionne',
         'lead': 'Tecnologia de ponta para isolar ruídos externos e garantir sua tranquilidade, seja em casa ou no trabalho.',
@@ -335,7 +335,7 @@ def head(*, titulo, descricao, caminho, tipo_pagina, indexar=True, schema=None, 
   <meta property="og:title" content="{esc(titulo)}">
   <meta property="og:description" content="{esc(descricao)}">
   <meta property="og:url" content="{canonical}">
-  <meta property="og:image" content="{URL}/assets/img/og-image.jpg">
+  <meta property="og:image" content="{URL}/assets/img/og-image-2.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
@@ -549,7 +549,7 @@ def negocio():
         'alternateName': E['nome'],
         'description': E['descricao_curta'],
         'url': URL + '/',
-        'image': f'{URL}/assets/img/og-image.jpg',
+        'image': f'{URL}/assets/img/og-image-2.jpg',
         'logo': f'{URL}/assets/favicon/web-app-manifest-512x512.png',
         'telephone': '+55-31-3442-1713',
         'email': E['email'],
@@ -579,8 +579,8 @@ def pagina_inicial():
             {'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': r}} for q, r in FAQ]},
     ]}
     cabeca = head(
-        titulo='Isolamento Acústico em BH – Projetos e Obras | Solucionne',
-        descricao='Isolamento e tratamento acústico em Belo Horizonte: projeto, laudos ABNT e obra. Janelas, portas, forros, paredes e pisos acústicos. Peça seu orçamento.',
+        titulo='Isolamento Acústico – Projetos e Obras em todo o Brasil | Solucionne',
+        descricao='Isolamento e tratamento acústico em todo o Brasil: projeto, laudos ABNT e obra. Janelas, portas, forros, paredes e pisos acústicos. Peça seu orçamento.',
         caminho='/', tipo_pagina='inicio', schema=schema, extra=preload('imagem-destaque1', sizes_hero))
 
     servicos = ''.join(f'''
@@ -622,7 +622,6 @@ def pagina_inicial():
       <div class="wrap">
         <div class="hero__content">
           <h1>
-            <span class="hero__local"><span class="ponto"></span>Isolamento e tratamento acústico em Belo Horizonte – MG</span>
             <span class="hero__titulo">A solução ideal para seu <em>isolamento acústico.</em></span>
           </h1>
           <p class="hero__sub">Combinamos tradição, conhecimento técnico e inovação para transformar qualquer ambiente com desempenho acústico excepcional.</p>

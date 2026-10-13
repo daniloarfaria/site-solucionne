@@ -156,9 +156,9 @@ def og_image():
             break
     if fonte:
         d.multiline_text((72, 300), 'A solução ideal para seu\nisolamento acústico.', font=fonte, fill='white', spacing=10)
-        d.text((72, 470), 'Projetos e obras acústicas · Belo Horizonte – MG', font=fonte_p, fill=(220, 220, 220))
+        d.text((72, 470), 'Projetos e obras acústicas em todo o Brasil', font=fonte_p, fill=(220, 220, 220))
         d.rectangle([72, 448, 152, 452], fill=(160, 18, 23))
-    img.convert('RGB').save(os.path.join(DEST, 'og-image.jpg'), 'JPEG', quality=84, optimize=True, progressive=True)
+    img.convert('RGB').save(os.path.join(DEST, 'og-image-2.jpg'), 'JPEG', quality=84, optimize=True, progressive=True)
     print('og-image ok')
 
 
