@@ -17,9 +17,9 @@ const PROPRIEDADE_SEGREDO = 'SEGREDO_FORMULARIO';
 const ABAS = {
   orcamento: {
     nome: 'Orçamentos',
-    colunas: ['Data/hora', 'Nome', 'E-mail', 'Telefone', 'Mensagem',
+    colunas: ['Data/hora', 'Nome', 'E-mail', 'Telefone', 'Mensagem', 'Interesse',
       'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'Página'],
-    campos: ['nome', 'email', 'telefone', 'mensagem',
+    campos: ['nome', 'email', 'telefone', 'mensagem', 'interesse',
       'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'pagina'],
     obrigatorios: ['nome', 'email', 'telefone', 'mensagem']
   },
@@ -139,7 +139,8 @@ function avisarPorEmail_(dados, tipo) {
       body: [
         'Nome: ' + dados.nome,
         'Telefone: ' + dados.telefone,
-        ehWhatsApp ? 'Interesse: ' + dados.interesse : 'E-mail: ' + dados.email,
+        ehWhatsApp ? '' : 'E-mail: ' + dados.email,
+        'Interesse: ' + (dados.interesse || 'Contato geral'),
         '',
         ehWhatsApp ? '' : 'Mensagem:\n' + dados.mensagem,
         '',

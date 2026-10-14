@@ -12,7 +12,7 @@ A URL do Apps Script e a senha nunca aparecem no código do site.
 
 O script grava em duas abas, criadas sozinhas no primeiro envio de cada tipo:
 
-- **Orçamentos**: formulário "Solicite um orçamento" (manda e-mail de aviso).
+- **Orçamentos**: formulário "Solicite um orçamento" da página inicial e das páginas de produto (com o produto de interesse; manda e-mail de aviso).
 - **Leads WhatsApp**: popup que aparece ao clicar em qualquer botão de WhatsApp (nome, telefone, interesse e UTMs).
   Para receber e-mail também desses leads, mude `AVISAR_LEADS_WHATSAPP` para `true` no topo do script.
 
@@ -22,7 +22,7 @@ Gere uma senha longa e aleatória (ex.: no terminal, `openssl rand -hex 24`). El
 
 ## 2. Planilha e Apps Script
 
-1. Crie uma planilha nova no Google Drive da ótica (ex.: "Orçamentos do site").
+1. Crie uma planilha nova no Google Drive da Solucionne (ex.: "Orçamentos do site").
 2. Na planilha: **Extensões → Apps Script**.
 3. Apague o conteúdo de `Código.gs`, cole todo o conteúdo de `Codigo.gs` desta pasta e salve.
 4. Se quiser, ajuste no topo do script o e-mail que recebe os avisos (`EMAIL_AVISO`).
