@@ -19,6 +19,19 @@ const OBRIGATORIOS = {
   whatsapp: ['nome', 'telefone']
 };
 const LIMITE_TEXTO = 2000;
+// Menos que isso entre abrir a página e enviar: só robô preenche tão rápido
+const TEMPO_MINIMO_MS = 3000;
+
+// Spam: alfabeto cirílico/chinês/japonês/coreano, mais de um link, ou link/HTML no nome
+const ALFABETO_ESTRANHO = /[\u0400-\u04FF\u3040-\u30FF\u4E00-\u9FFF\uAC00-\uD7AF]/;
+const LINK = /https?:\/\/|www\.|xn--|\[url|<a\s/gi;
+function pareceSpam(dados) {
+  const texto = [dados.nome, dados.email, dados.mensagem].join(' ');
+  if (ALFABETO_ESTRANHO.test(texto)) return 'alfabeto';
+  if ((dados.mensagem.match(LINK) || []).length > 1) return 'links';
+  if ((dados.nome.match(LINK) || []).length) return 'link_no_nome';
+  return '';
+}
 
 // Telefone: mesma regra de public/assets/js/main.js → guarda "(DD) 9XXXX-XXXX" ou "(DD) XXXX-XXXX"
 function normalizarTelefone(valor) {
@@ -62,6 +75,18 @@ export default async (req) => {
 
   // Campo "empresa" é invisível no site: se veio preenchido, é robô. Finge sucesso e descarta.
   if (dados.empresa) return responder(veioDoJs, true);
+
+  // Sem o tempo que o JavaScript do site envia (robô postando direto na função) ou rápido demais
+  const tempo = Number(bruto.tempo_ms);
+  if (!veioDoJs || !Number.isFinite(tempo) || tempo < TEMPO_MINIMO_MS) {
+    console.log('Descartado como robô: tempo', bruto.tempo_ms ?? 'ausente');
+    return responder(veioDoJs, true);
+  }
+  const spam = pareceSpam(dados);
+  if (spam) {
+    console.log('Descartado como spam:', spam);
+    return responder(veioDoJs, true);
+  }
 
   if (dados.tipo !== 'whatsapp') dados.tipo = 'orcamento';
   if (OBRIGATORIOS[dados.tipo].some((campo) => !dados[campo])) {

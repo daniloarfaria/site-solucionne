@@ -74,6 +74,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Netlify Function que repassa para a planilha (a URL do Apps Script fica escondida nela)
   const endpoint = '/api/orcamento';
+  // Tempo desde a abertura da página: a função descarta envios rápidos demais (robôs)
+  const abertura = Date.now();
 
   // ===== Telefone =====
   // Aceita qualquer jeito de digitar: +55 31 90000-0000, 5531900000000, 031 90000 0000, (31)90000-0000...
@@ -287,7 +289,8 @@ document.addEventListener('DOMContentLoaded', function () {
         utm_term: form.utm_term.value,
         pagina: window.location.href,
         event_id: novoEventId(),
-        consentimento: rastreamento.consentimento()
+        consentimento: rastreamento.consentimento(),
+        tempo_ms: Date.now() - abertura
       };
 
       button.disabled = true;
@@ -410,7 +413,8 @@ document.addEventListener('DOMContentLoaded', function () {
         interesse: destino.interesse,
         pagina: window.location.href,
         event_id: novoEventId(),
-        consentimento: rastreamento.consentimento()
+        consentimento: rastreamento.consentimento(),
+        tempo_ms: Date.now() - abertura
       };
       const temUtmNoLink = Object.keys(destino.utm).length > 0;
       UTM_KEYS.forEach((key) => { data[key] = temUtmNoLink ? (destino.utm[key] || '') : getUtm(key); });
