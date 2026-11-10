@@ -960,12 +960,10 @@ def pagina_links():
 
     links = [
         botao('Vim pelo Instagram e gostaria de um orçamento.', 'Fale no WhatsApp', 'Atendimento e orçamentos', 'whatsapp', 'Contato geral', ' bio__link--whats'),
-        botao('Vim pelo Instagram e gostaria de um orçamento de Janela Acústica.', 'Orçamento de Janela Acústica', 'Linhas Basic, Confort e Advanced', 'whatsapp_janela', 'Janela Acústica'),
+        botao('Vim pela Black! Gostaria de saber mais sobre o Mês da Black Friday Solucionne.', 'MÊS DA BLACK FRIDAY SOLUCIONNE', 'Toque e fale com a gente', 'whatsapp_blackfriday', 'Black Friday', ' bio__link--bf'),
     ]
     paginas = [
         ('', 'globe', 'Visite nosso site', 'Produtos, soluções e obras', 'site'),
-        ('janela-acustica', 'arrow-up-right', 'Janelas acústicas', 'Até 30 dB de isolamento', 'janela'),
-        ('portas-acusticas', 'arrow-up-right', 'Portas acústicas', 'Madeira, aço ou vidro', 'portas'),
         ('', 'arrow-up-right', 'Todos os produtos', 'Forros, paredes, pisos, painéis e mais', 'produtos'),
     ]
     links_site = []

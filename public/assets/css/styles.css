@@ -744,6 +744,10 @@ form button[disabled] { opacity: .6; cursor: progress; transform: none; }
 .bio__link--whats:hover { background: #3BE07A; border-color: #3BE07A; }
 .bio__link--whats small, .bio__link--whats > .icon:last-child { color: var(--on-whats); }
 .bio__link--whats > .icon:first-child { background: rgba(0, 0, 0, .1); }
+.bio__link--bf { background: linear-gradient(135deg, #000 0%, #5A0A0E 55%, #A01217 100%); border-color: #F0464C; box-shadow: 0 0 28px rgba(160, 18, 23, .55); }
+.bio__link--bf:hover { background: linear-gradient(135deg, #0A0A0A 0%, #6E0C11 55%, #C21A20 100%); border-color: #FF6A70; }
+.bio__link--bf strong { text-transform: uppercase; letter-spacing: .03em; }
+.bio__link--bf small { color: #F3C9CB; }
 .bio__titulo { margin: 22px 0 2px; font-size: .78rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); text-align: center; }
 .bio .social { margin-top: 26px; }
 .bio__rodape { margin-top: 32px; font-size: .78rem; color: #8A8A92; }
