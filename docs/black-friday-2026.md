@@ -6,6 +6,7 @@ Pedido da cliente em 10/11/2026. Só a página de links da bio (`/links`) foi al
 Em `ferramentas/gerar_paginas.py`, função `pagina_links()`:
 1. O botão **"Orçamento de Janela Acústica"** virou **"MÊS DA BLACK FRIDAY SOLUCIONNE"** (classe extra `bio__link--bf`, `data-utm-content="whatsapp_blackfriday"`, interesse "Black Friday").
    - Mensagem automática do WhatsApp: "Vim pela Black! Gostaria de saber mais sobre o Mês da Black Friday Solucionne." (identifica quem chegou pela campanha).
+   - O card fica em **primeiro lugar**, acima de "Fale no WhatsApp". Ao desfazer, o botão de janela acústica volta no lugar dele (segunda posição, abaixo do WhatsApp).
 2. Foram removidos da seção "No site" os links **Janelas acústicas** e **Portas acústicas**. A cliente pediu a retirada em definitivo; a de dezembro só reverte o item 1 (confirmar com ela se quer os links de volta).
 3. Em `public/assets/css/styles.css`: bloco `.bio__link--bf` (degradê preto/vermelho, borda e brilho), logo antes de `.bio__titulo`. Pode ser apagado.
 

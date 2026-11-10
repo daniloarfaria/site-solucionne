@@ -959,8 +959,8 @@ def pagina_links():
                 f'<span><strong>{titulo}</strong><small>{sub}</small></span>{ic("arrow-right")}</a>')
 
     links = [
-        botao('Vim pelo Instagram e gostaria de um orçamento.', 'Fale no WhatsApp', 'Atendimento e orçamentos', 'whatsapp', 'Contato geral', ' bio__link--whats'),
         botao('Vim pela Black! Gostaria de saber mais sobre o Mês da Black Friday Solucionne.', 'MÊS DA BLACK FRIDAY SOLUCIONNE', 'Toque e fale com a gente', 'whatsapp_blackfriday', 'Black Friday', ' bio__link--bf'),
+        botao('Vim pelo Instagram e gostaria de um orçamento.', 'Fale no WhatsApp', 'Atendimento e orçamentos', 'whatsapp', 'Contato geral', ' bio__link--whats'),
     ]
     paginas = [
         ('', 'globe', 'Visite nosso site', 'Produtos, soluções e obras', 'site'),
